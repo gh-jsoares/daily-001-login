@@ -1,0 +1,207 @@
+// Variables
+$primary-color: #A8DCFF
+$secondary-color: #ACC3D2
+$background-color: #F4F6F8
+
+// Setup
+*:focus
+	outline: none
+::-moz-focus-inner
+	border: 0
+
+html,
+body
+	height: 100%
+	width: 100%
+	padding: 0
+	margin: 0
+	display: flex
+	font-family: 'Roboto'
+	color: $secondary-color
+
+
+// Typography
+h1
+	font-size: 38px
+	margin: 0
+	font-weight: normal
+	
+h2
+	font-size: 18px
+	font-weight: normal
+	margin: 0
+
+a
+	color: $primary-color
+	text-decoration: none
+	font-weight: bold
+	transition: all .2s ease-out
+	border-bottom: 2px solid transparent
+	&:hover
+		border-bottom: 2px solid $primary-color
+
+button
+	background: $primary-color
+	color: white
+	outline: none
+	border: none
+	box-shadow: none
+	width: 120px
+	height: 43px
+	text-align: center
+	padding: 5px
+	box-sizing: border-box
+	font-weight: bold
+	text-transform: uppercase
+	cursor: pointer
+	transition: all .2s ease-out
+	border: 2px solid $primary-color
+	font-size: 13px
+	letter-spacing: 1px
+	&:hover
+		background: white
+		color: $primary-color
+
+.input-group
+	position: relative
+	i
+		position: absolute
+		top: 35px
+		left: 15px
+	input
+		background: $background-color
+		border: none
+		outline: none
+		width: 300px
+		height: 50px
+		margin: 20px 0
+		padding: 15px
+		padding-left: 50px
+		box-sizing: border-box
+		color: $secondary-color
+		font-size: 16px
+		&:focus
+			outline: 2px solid $primary-color
+
+.colored
+	color: $primary-color
+
+#pw-forgot
+	font-size: 14px
+
+.hidden-link
+	display: none
+	font-size: 14px
+
+// Icons
+i
+	display: block
+	height: 20px
+	width: 20px
+	background-size: contain
+	background-position: center
+	background-repeat: no-repeat
+	margin: 0 auto
+i.logo
+	background-image: url('../img/logo.svg')
+	height: 250px
+	width: 250px
+	opacity: 0.80
+i.user
+	background-image: url('../img/user.svg')
+i.lock
+	background-image: url('../img/lock.svg')
+
+// Left side, aka header
+header
+	background: linear-gradient(rgba(85, 94, 100, 0.45), rgba(85, 94, 100, 0.45)), url('../img/bg.jpg')  
+	background-size: cover
+	background-position: center
+	height: 100%
+	color: white
+	flex: 0 1 430px
+	padding: 0 28px
+	box-sizing: border-box
+	text-align: center
+	transition: all .3s ease-out
+
+	.headings
+		margin: 150px 0 110px
+
+
+// Right side, aka main
+main
+	flex: 1 10 100%
+	display: flex
+	justify-content: space-around
+	align-items: center
+	padding: 50px 0
+
+	.divider
+		color: $primary-color
+		text-transform: uppercase
+		padding: 10px 0
+		text-align: center
+		font-weight: bold
+
+		&:before,
+		&:after,
+			content: ''
+			display: block
+			width: 1px
+			height: 25vh
+			background-color: $primary-color
+			margin: 10px auto
+
+	section
+		flex: 1 1 300px
+		padding: 50px 60px
+		text-align: center
+		font-size: 18px
+		height: 75vh
+		max-height: 570px
+		position: relative
+		h2
+			font-weight: bold
+			text-align: left
+		form
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+			button
+				margin-top: 30px
+
+@media screen and (max-width: 1150px) and (min-width: 721px)
+	body
+		header
+			flex-grow: 0
+			flex-shrink: 1000
+			transform: translateX(-430px)
+		main
+			width: 100%
+			position: absolute
+			transform: translate(-50%, -50%)
+			top: 50%
+			left: 50%
+
+@media screen and (max-width: 720px)
+	.hidden-link
+		display: block
+	body
+		display: block
+		overflow: hidden
+		header
+			display: none
+		main
+			padding: 0
+			display: block
+			position: relative
+			transform: none
+			.divider
+				display: none
+			section
+				height: 100vh
+				max-height: none
+				padding: 50px 60px
